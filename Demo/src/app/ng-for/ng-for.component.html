@@ -1,0 +1,22 @@
+<h1>Inside ng FOR Component</h1>
+
+
+<h2>Batches of Marvellous</h2>
+<h3>{{Batches[0]}}</h3>
+<h3>{{Batches[1]}}</h3>
+<h3>{{Batches[2]}}</h3>
+<h3>{{Batches[3]}}</h3>
+
+<h2>Batches of Marvellous</h2>
+<div *ngFor="let values of Batches">
+    <h2>
+        {{values}}
+    </h2>
+</div>
+
+<h2>Batches of Marvellous</h2>
+<div *ngFor ="let values of Batches;index as i">
+    <h2>
+        {{i}} : {{values}}
+    </h2>
+</div>

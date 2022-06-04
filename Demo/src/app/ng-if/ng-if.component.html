@@ -1,0 +1,19 @@
+
+<h1>
+    Inside ng IF Component
+</h1>
+
+<h2 *ngif="flag">
+    Inside IF component
+</h2>
+
+
+<ng-template #VegFood>
+    <h3>Please consider veg food menu</h3>
+</ng-template>
+
+<ng-template #NonvegFood>
+    <h3>Please consider Non veg food menu</h3>
+</ng-template>
+
+<h3 *ngIf = "Food;then VegFood;else NonvegFood"></h3>
