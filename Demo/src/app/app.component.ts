@@ -9,4 +9,8 @@ export class AppComponent {
   title = 'Demo';
   name = 'Snehal Sanjay Renushe';
   age = 21;
+
+  public Message = "Hello Child Component...";
+
+  public Msg:any;     //Childtoparent
 }

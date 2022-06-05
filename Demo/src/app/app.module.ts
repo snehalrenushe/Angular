@@ -3,6 +3,8 @@ import { BrowserModule } from '@angular/platform-browser';
 
 import { AppRoutingModule } from './app-routing.module';
 import { AppComponent } from './app.component';
+import {FormsModule} from '@angular/forms';
+
 import { MarvellousComponent } from './marvellous/marvellous.component';
 import { FirstComponent } from './first/first.component';
 import { SecondComponent } from './second/second.component';
@@ -13,6 +15,9 @@ import { NgIfComponent } from './ng-if/ng-if.component';
 import { NgForComponent } from './ng-for/ng-for.component';
 import { NgWhileComponent } from './ng-while/ng-while.component';
 import { NgSwitchComponent } from './ng-switch/ng-switch.component';
+import { ChildComponent } from './child/child.component';
+import { ParentComponent } from './parent/parent.component';
+import { TwoWayDataBindingComponent } from './two-way-data-binding/two-way-data-binding.component';
 
 @NgModule({
   declarations: [
@@ -26,11 +31,15 @@ import { NgSwitchComponent } from './ng-switch/ng-switch.component';
     NgIfComponent,
     NgForComponent,
     NgWhileComponent,
-    NgSwitchComponent
+    NgSwitchComponent,
+    ChildComponent,
+    ParentComponent,
+    TwoWayDataBindingComponent
   ],
   imports: [
     BrowserModule,
-    AppRoutingModule
+    AppRoutingModule,
+    FormsModule
   ],
   providers: [],
   bootstrap: [AppComponent]

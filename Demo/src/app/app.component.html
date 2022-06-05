@@ -24,3 +24,12 @@
 <app-ng-for></app-ng-for>
 <app-ng-if></app-ng-if>
 <app-ng-switch></app-ng-switch>
+
+<h3>Inside Parent Component</h3>
+<app-child [Data] = "Message"></app-child>
+
+<h3>Inside Parent Component</h3>
+<app-parent (Myevent) = "Msg = $event"></app-parent>
+<h1>Message form child: {{Msg}}</h1>
+
+<app-two-way-data-binding></app-two-way-data-binding>
