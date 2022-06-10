@@ -1,0 +1,24 @@
+<h1>Inside Child Component</h1>
+
+<h1>=> Child to parent</h1>
+<input #Mydata type="text">
+<button (click) = "SendMessage(Mydata.value)">
+    Submit
+</button>
+
+<h1>Textbox data is :{{value}}</h1>
+
+
+<h1>=> Both child to parent and parent to child</h1>
+
+<h2>
+    Enter your name :
+</h2>
+
+<input [(ngModel)] = "Name" type="text">        <!--Banana in the box-->
+
+<h2>Your name is : {{Name}}</h2>
+
+<h1>=> Calculate lenght of text in textbox simultaneously</h1>
+
+<h2>Lenght of text is : {{Name.length}}</h2>

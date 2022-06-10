@@ -5,11 +5,7 @@ import { Component, OnInit } from '@angular/core';
   templateUrl: './demo.component.html',
   styleUrls: ['./demo.component.css']
 })
-export class DemoComponent implements OnInit {
+export class DemoComponent{
 
-  constructor() { }
-
-  ngOnInit(): void {
-  }
-
+  public inline_css = "red";
 }
