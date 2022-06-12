@@ -18,6 +18,13 @@ import { NgSwitchComponent } from './ng-switch/ng-switch.component';
 import { ChildComponent } from './child/child.component';
 import { ParentComponent } from './parent/parent.component';
 import { TwoWayDataBindingComponent } from './two-way-data-binding/two-way-data-binding.component';
+import { BatchlistComponent } from './batchlist/batchlist.component';
+import { BatchdetailsComponent } from './batchdetails/batchdetails.component';
+import { WservBatchlistComponent } from './wserv-batchlist/wserv-batchlist.component';
+import { WservBatchdetailsComponent } from './wserv-batchdetails/wserv-batchdetails.component';
+import { BatchserviceService } from './batchservice.service';
+import {HttpClientModule} from '@angular/common/http';
+import { AlertModule } from 'ngx-bootstrap/alert';
 
 @NgModule({
   declarations: [
@@ -34,14 +41,20 @@ import { TwoWayDataBindingComponent } from './two-way-data-binding/two-way-data-
     NgSwitchComponent,
     ChildComponent,
     ParentComponent,
-    TwoWayDataBindingComponent
+    TwoWayDataBindingComponent,
+    BatchlistComponent,
+    BatchdetailsComponent,
+    WservBatchlistComponent,
+    WservBatchdetailsComponent
   ],
   imports: [
     BrowserModule,
+    AlertModule.forRoot(),
     AppRoutingModule,
-    FormsModule
+    FormsModule,
+    HttpClientModule
   ],
-  providers: [],
+  providers: [BatchserviceService],
   bootstrap: [AppComponent]
 })
 export class AppModule { }
