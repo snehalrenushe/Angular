@@ -12,6 +12,11 @@ import { FirstComponent } from './first/first.component';
 import { SecondComponent } from './second/second.component';
 import { ChildComponent } from './child/child.component';
 import { ApppComponent } from './appp/appp.component';
+import { NewDemoComponent } from './new-demo/new-demo.component';
+import { ArithmeticService } from './arithmetic.service';
+import { Child1Component } from './child1/child1.component';
+import { Child2Component } from './child2/child2.component';
+import { NewChildComponent } from './new-child/new-child.component';
 
 @NgModule({
   declarations: [
@@ -23,13 +28,17 @@ import { ApppComponent } from './appp/appp.component';
     FirstComponent,
     SecondComponent,
     ChildComponent,
-    ApppComponent
+    ApppComponent,
+    NewDemoComponent,
+    Child1Component,
+    Child2Component,
+    NewChildComponent
   ],
   imports: [
     BrowserModule,
     FormsModule
   ],
-  providers: [],
+  providers: [ArithmeticService],
   bootstrap: [AppComponent]
 })
 export class AppModule { }
