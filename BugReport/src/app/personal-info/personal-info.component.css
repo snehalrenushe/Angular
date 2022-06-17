@@ -1,0 +1,37 @@
+
+.personal-info
+{
+    width: 90%;
+    margin: 3% auto;
+}
+
+.input-tab
+{
+    display: flex;
+    justify-content: space-between;
+}
+
+.input-tab input
+{
+    width: 48%;
+}
+
+.label-tab
+{
+    display: flex;
+}
+
+#lname
+{
+    margin-left: 45.5%;
+}
+
+.email
+{
+    margin-top: 3%;
+}
+
+.email input
+{
+    width: 100%;
+}

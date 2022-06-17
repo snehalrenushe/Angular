@@ -1,0 +1,16 @@
+
+.header
+{
+    background-color: rgb(237, 233, 233);
+}
+
+.header h1
+{
+    text-align: center;
+}
+
+.header p
+{
+    width: 90%;
+    margin: auto;
+}

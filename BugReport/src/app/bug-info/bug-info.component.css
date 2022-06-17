@@ -1,0 +1,10 @@
+.date, .impact
+{
+    margin: 2% auto;
+    width: 90%;
+}
+
+.impact input{
+    width: 100%;
+}
+

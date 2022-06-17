@@ -1,0 +1,11 @@
+.footer
+{
+    width: 90%;
+    margin:  2% auto;
+}
+
+.footer input
+{
+    width: 100%;
+    height: 50%;
+}
