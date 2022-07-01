@@ -1,0 +1,71 @@
+
+<div class="container">
+  <div class="heading-logo">
+    <div class="heading">
+      <h1 class="title">Contact Our</h1>
+      <h1>Customer Support Center</h1>
+    </div>
+    <div class="logo">
+      <img src="../assets/laptop.png" alt="Laptop">
+    </div>
+  </div>
+  <div class="contact-heading">
+    <h3>Contact Information</h3>
+    <h5>Please fill your contact information below.</h5>
+  </div>
+  <form [formGroup] = "LaptopSupport">
+    <div class="form-group small">
+      
+      <small [class.d-none]="LaptopSupport.get('firstname')?.valid" class="text-danger" style="font-weight: normal;">Username is required and should proper format</small><br>
+      <label>Name<strong>*</strong></label>
+      <div class="input-name">
+        <div class="first-name">
+          <input [class.is-invalid] = "LaptopSupport.get('firstname')?.invalid" type="text" class="form-control" formControlName="firstname">
+          <label>First Name</label>
+        </div>
+        <div class="first-name">
+          <input type="text" class="form-control" formControlName="lastname">
+          <label>Last Name</label>
+        </div>
+      </div>
+    </div>
+    <div class="form-group small">
+      <small [class.d-none]="LaptopSupport.get('email')?.valid" class="text-danger" style="font-weight: normal;">Email is required and should proper format</small><br>
+      <label>Email<strong>*</strong></label>
+      <input [class.is-invalid] = "LaptopSupport.get('email')?.invalid" type="email" class="form-control" formControlName="email">
+    </div>
+    <div class="form-group small">
+      <small [class.d-none]="LaptopSupport.get('mobile')?.valid" class="text-danger" style="font-weight: normal;">Mobile is required and should proper format</small><br>
+      <label>Phone<strong>*</strong></label>
+      <input type="tel" class="form-control" formControlName="mobile">
+    </div>
+    <div class="form-group small">
+      <small [class.d-none]="LaptopSupport.get('city')?.valid" class="text-danger" style="font-weight: normal;">City is required</small><br>
+      <label>City<strong>*</strong></label>
+      <input type="text" class="form-control" formControlName="city">
+    </div>
+    <div class="form-group small">
+      <label>State</label>
+      <!-- <input type="text" class="form-control" formControlName="state"> -->
+      <select formControlName="state" class="form-control"  style="height: 40px;margin-top: 10px;">
+        <option>Choose State</option>
+        <option *ngFor="let state of statelist">{{state}}</option>
+    </select>
+    </div>
+    <div class="form-group small">
+      <label>Zip Code</label>
+      <input type="text" class="form-control" formControlName="zipcode">
+    </div>
+    <div class="form-group small">
+      <label>Comment</label>
+      <textarea name="comment" cols="10" rows="5" type="text" class="form-control" formControlName="Comment"></textarea>
+    </div>
+    
+    <button type="button" class="btn btn-primary" [disabled]="!LaptopSupport.valid" onclick="submit">SUBMIT FORM</button>
+  </form>
+ 
+  {{LaptopSupport.value | json}}
+
+</div>
+
+<router-outlet></router-outlet>
