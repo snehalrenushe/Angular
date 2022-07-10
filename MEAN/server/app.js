@@ -1,33 +1,28 @@
 express = require('express');
+mongoose = require('mongoose');
+batchesRouter = require("./routes/batchesRoutes.js");
+var bodyParser = require('body-parser')
 
 eobj = express();
+eobj.use(bodyParser.urlencoded({extended : false}))
+eobj.use(bodyParser.json());
 
-port = 5100;
+//eobj.use(express.json());
 
-function MarvellousConnect(request,response)
-{
-    console.log("Marvellous server is live at port "+port);
-}
+eobj.use(batchesRouter);
 
-eobj.listen(port,MarvellousConnect);
+eobj.listen(4000, (request,responce) => {
+  console.log("Server is running at 4000");
+});
 
-function MarvellousRoot(request,response)
-{
-    response.json({"Status":"Success"});
-}
+eobj.get('/', (request, responce) =>{
+  responce.send("Marvellous server is running");
+});
 
-eobj.get('/',MarvellousRoot);
+Database = 'mongodb+srv://marvellous:marvellous@batches.g9krf.mongodb.net/?retryWrites=true&w=majority';
 
-function MarvellousBatches(request,response)
-{
-    response.json({"PPA":"4 Months","Python":"3 Months","Angular":"5 Months"});
-}
-
-eobj.get('/getBatches',MarvellousBatches);
-
-function MarvellousAdmin(request,response)
-{
-    response.json({"Mobile":"8425921120","Website":"www.snehal.com"});
-}
-
-eobj.get('/getAdmin',MarvellousAdmin);
+mongoose.connect(Database).then(()=> {
+  console.log("Database connection is succesful");
+}).catch((err)=>{
+  console.log("Connection failed");
+});
