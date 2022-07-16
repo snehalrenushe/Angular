@@ -5,7 +5,7 @@ import { Component, OnInit } from '@angular/core';
   template: `<h2>Inside Batch List</h2>
   <ul *ngFor = "let value of Batches">
     <li>{{value.Name}}</li>
-  </ul>
+  </ul> 
   `
 })
 export class BatchlistComponent implements OnInit {
