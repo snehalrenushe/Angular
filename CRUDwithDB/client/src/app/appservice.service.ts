@@ -14,4 +14,9 @@ export class AppServiceService
   {
     return this.http.get('/api/getBatches');
   }
+
+  connect()
+  {
+    return this.http.get('/api/connect');
+  }
 }

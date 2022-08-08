@@ -25,6 +25,13 @@ function MarvellousBatches(request, response)
     });
 }
 
+app.get('/connect',(request,response) => {
+    response.json({
+        "Name" : "Snehal",
+        "Age" : 22
+    });
+});
+
 app.get('/getAdminDetails', MarvellousAdmin);
 
 function MarvellousAdmin(request, response)

@@ -18,6 +18,7 @@ export class AppComponent implements OnInit
   ngOnInit()
   {
     this.getBathesfromAPI()
+    this.connect();
   }
 
   getBathesfromAPI()
@@ -25,5 +26,12 @@ export class AppComponent implements OnInit
        this.service.getBatches().subscribe((Response)=>{
       console.log("Data from server : ",Response);
     }); 
+  }
+
+  connect()
+  {
+    this.service.connect().subscribe((Response) => {
+      console.log("Data from server",Response);
+    })
   }
 }
