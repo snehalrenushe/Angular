@@ -17,3 +17,7 @@ app.use('/api', api);
 app.listen(port, function(){
     console.log("Marvellous Innfosystems : Server running on localhost:" + port);
 });
+
+app.get(port, function(){
+    response.send("Marvellous Innfosystems : Server running on localhost:" + port);
+});

@@ -9,7 +9,7 @@ import { Router } from '@angular/router'
 })
 export class SpecialEventsComponent implements OnInit 
 {  
-  specialEvents :any = []
+  specialEvents = []
 
   constructor(private _eventService: EventService,
               private _router: Router) { }

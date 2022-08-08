@@ -12,7 +12,6 @@ import { SpecialEventsComponent } from './special-events/special-events.componen
 import { AuthService } from './auth.service';
 import { EventService } from './event.service';
 import { TokenInterceptorService } from './token-interceptor.service';
-import { NgbModule } from '@ng-bootstrap/ng-bootstrap';
 
 
 @NgModule({
@@ -26,8 +25,7 @@ import { NgbModule } from '@ng-bootstrap/ng-bootstrap';
     BrowserModule,
     FormsModule,
     HttpClientModule,
-    AppRoutingModule,
-    NgbModule
+    AppRoutingModule
   ],
   providers: [AuthService, AuthGuard, EventService, 
   {
