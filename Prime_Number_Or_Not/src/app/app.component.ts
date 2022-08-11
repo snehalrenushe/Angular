@@ -27,11 +27,11 @@ export class AppComponent
     }
     if(data==this.i)
     {
-        console.log("prime no");
+        console.log("Prime Number");
     }
     else
     {
-      console.log("not prime no");
+      console.log("Composite Number");
     }
   }
 
