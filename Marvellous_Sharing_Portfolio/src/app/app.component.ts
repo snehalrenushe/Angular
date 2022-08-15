@@ -8,7 +8,7 @@ export class AppComponent
 {
   loadedFeature = 'project';
 
-  onNavigate(feature: string) 
+  onNavigate(feature: any) 
   {
     this.loadedFeature = feature;
   }

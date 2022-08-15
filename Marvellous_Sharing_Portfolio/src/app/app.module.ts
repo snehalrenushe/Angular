@@ -1,7 +1,7 @@
 import { BrowserModule } from '@angular/platform-browser';
 import { NgModule } from '@angular/core';
 import { FormsModule, ReactiveFormsModule } from '@angular/forms';
-import { HttpModule } from '@angular/common/http';
+import { HttpModule } from '@angular/http';
 
 import { AppComponent } from './app.component';
 import { HeaderComponent } from './header/header.component';
@@ -18,7 +18,7 @@ import { ProjectStartComponent } from './projects/project-start/project-start.co
 import { ProjectEditComponent } from './projects/project-edit/project-edit.component';
 import { ProjectService } from './projects/project.service';
 import { AboutusComponent } from './aboutus/aboutus.component';
-import { NgbModule } from '@ng-bootstrap/ng-bootstrap';
+import { ContactComponent } from './contact/contact.component';
 
 @NgModule({
   declarations: [
@@ -33,15 +33,15 @@ import { NgbModule } from '@ng-bootstrap/ng-bootstrap';
     DropdownDirective,
     ProjectStartComponent,
     ProjectEditComponent,
-    AboutusComponent
+    AboutusComponent,
+    ContactComponent
   ],
   imports: [
     BrowserModule,
     FormsModule,
     ReactiveFormsModule,
-    AppRoutingModule,
-    NgbModule,
     HttpModule,
+    AppRoutingModule
   ],
   providers: [BookShoppingListService, ProjectService],
   bootstrap: [AppComponent]

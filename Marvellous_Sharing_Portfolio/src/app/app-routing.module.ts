@@ -10,6 +10,7 @@ import { ProjectStartComponent } from './projects/project-start/project-start.co
 import { ProjectDetailComponent } from './projects/project-detail/project-detail.component';
 import { ProjectEditComponent } from './projects/project-edit/project-edit.component';
 import {AboutusComponent} from './aboutus/aboutus.component';
+import { ContactComponent } from './contact/contact.component';
 
 // Routes array for routing
 const appRoutes: Routes = [
@@ -22,6 +23,7 @@ const appRoutes: Routes = [
   ] },
   { path: 'book-list', component: BookListComponent },
   { path: 'aboutus', component: AboutusComponent },
+  { path: 'contact', component: ContactComponent },
 ];
 
 @NgModule({

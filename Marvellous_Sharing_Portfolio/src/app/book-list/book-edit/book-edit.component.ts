@@ -6,7 +6,7 @@ import {
 } from '@angular/core';
 
 import { NgForm } from '@angular/forms';
-import { Subscription } from 'rxjs/Subscription';
+import { Subscription } from 'rxjs';
 
 import { Book } from '../../shared/Book.model';
 import { BookShoppingListService } from '../bookshopping-list.service';
@@ -19,11 +19,11 @@ import { BookShoppingListService } from '../bookshopping-list.service';
 export class BookEditComponent implements OnInit, OnDestroy 
 {
   // Characteristcs of Class
-  @ViewChild('f') slForm: NgForm;
-  subscription: Subscription;
+  @ViewChild('f') slForm!: NgForm;
+  subscription!: Subscription;
   editMode = false;
-  editedItemIndex: number;
-  editedItem: Book;
+  editedItemIndex!: number;
+  editedItem!: Book;
 
   // Constroctor with dependency injection
   constructor(private slService: BookShoppingListService) 

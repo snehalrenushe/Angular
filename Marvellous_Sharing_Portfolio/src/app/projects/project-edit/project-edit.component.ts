@@ -13,7 +13,8 @@ export class ProjectEditComponent implements OnInit
 {
   id!: number;
   editMode = false;
-  proForm!: FormGroup;
+  public proForm!: FormGroup;
+  projectInfo: any;
 
   constructor(private route: ActivatedRoute,
               private projectService: ProjectService,
@@ -26,9 +27,14 @@ export class ProjectEditComponent implements OnInit
         (params: Params) => {
           this.id = +params['id'];
           this.editMode = params['id'] != null;
-          this.initForm();
+          this.initForm(null);
         }
       );
+  }
+
+  getProjects(){
+    this.projectInfo = this.projectService.getProject(this.id);
+    this.initForm(this.projectInfo);
   }
 
   onSubmit() 
@@ -58,6 +64,8 @@ export class ProjectEditComponent implements OnInit
     );
   }
 
+  get f(){return this.proForm.get('Books') as FormArray}
+
   onDeleteBook(index: number) 
   {
     (<FormArray>this.proForm.get('Books')).removeAt(index);
@@ -68,39 +76,30 @@ export class ProjectEditComponent implements OnInit
     this.router.navigate(['../'], {relativeTo: this.route});
   }
 
-  private initForm() 
+  private initForm(value:any)         //set value to form when load 1st if available
   {
-    let proName = '';
-    let proImagePath = '';
-    let proDescription = '';
-    let proBooks = new FormArray([]);
-
-    if (this.editMode) 
-    {
-      const pro = this.projectService.getProject(this.id);
-      proName = pro.name;
-      proImagePath = pro.imagePath;
-      proDescription = pro.description;
-      if (pro['Books']) {
-        for (let Book of pro.Books) {
-          proBooks.push(
-            new FormGroup({
-              'name': new FormControl(Book.name, Validators.required),
-              'amount': new FormControl(Book.amount, [
-                Validators.required,
-                Validators.pattern(/^[1-9]+[0-9]*$/)
-              ])
-            })
-          );
-        }
-      }
-    }
-
     this.proForm = new FormGroup({
-      'name': new FormControl(proName, Validators.required),
-      'imagePath': new FormControl(proImagePath, Validators.required),
-      'description': new FormControl(proDescription, Validators.required),
-      'Books': proBooks
+      'name': new FormControl(value? value.name: '', Validators.required),
+      'imagePath': new FormControl(value? value.imagePath: '', Validators.required),
+      'description': new FormControl(value? value.description: '', Validators.required),
+      'Books': new FormArray([this.addBooks(value? value.Books: null)])         //call addBooks from here to form new FormGroupp and push into Books FormArray
     });
   }
+
+  //create new FormGroup for books and return to Books formArray
+  addBooks(value:any){
+    return new FormGroup({
+      'name': new FormControl(value? value.name: '', Validators.required),
+      'amount': new FormControl(value? value.amount: '', [
+        Validators.required,
+        Validators.pattern(/^[1-9]+[0-9]*$/)
+      ])
+    })
+  }
+
+  //Add controls(text boxes) on form
+  addBookControl(){
+    (<FormArray>this.proForm.get('Books')).push(this.addBooks(null));
+  }
+
 }
