@@ -1,1 +1,1 @@
-These repo is for Basic Angular terminologies.
+These repo is for Basic Angular terminologies. 
